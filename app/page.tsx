@@ -2,14 +2,21 @@ import Image from "next/image";
 import { stripe } from "@/lib/stripe";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Carousel } from "@/components/carousel";
 import Stripe from "stripe";
-import { useState } from "react";
 
 export default async function Home() {
-  const products = await stripe.products.list({
-    expand: ["data.default_price"],
-  });
+  /*************  ✨ Codeium Command ⭐  *************/
+  /**
+   * The homepage of the application.
+   *
+   * This page displays a hero section with a background image and a call-to-action
+   * button to browse all products. Below the hero section, it displays a list of all
+   * products with their name, price, and a link to the product details page.
+   */
+  /******  747122b5-5b37-4861-998c-a48349eb9ae4  *******/ const products =
+    await stripe.products.list({
+      expand: ["data.default_price"],
+    });
 
   if (!products.data.length) {
     return <p className="text-center text-lg">No products available.</p>;
